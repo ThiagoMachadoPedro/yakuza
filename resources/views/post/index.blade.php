@@ -39,7 +39,9 @@
     <div class="col-md-3 col-lg-3 mb-3 pt-4">
         <div class="card">
             <a href="{{ route('post-show', ['id' => $post->id]) }}">
-                <img src="{{ url("storage/$post->imagem" ) }}" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" alt="Imagem do post">
+
+
+                <img src="{{ url("storage/post/$post->imagem" ) }}" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" alt="Imagem do post">
             </a>
 
             <div class="card-body">
