@@ -89,7 +89,7 @@ return [
                               'charset' => 'utf8',
                               'prefix' => '',
                               'schema' => 'public',
-                              'sslmode' => 'require', // Alterado para 'require' para SSL obrigatório
+                              'sslmode' => 'require', 
                     ],
 
 
