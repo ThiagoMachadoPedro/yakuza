@@ -79,7 +79,7 @@ return [
             ]) : [],
         ],
 
-                    'pg' => [
+                    'pgsql' => [
                               'driver' => 'pgsql',
                               'host' => env('DB_HOST', 'localhost'),
                               'port' => env('DB_PORT', '25060'),
@@ -89,8 +89,9 @@ return [
                               'charset' => 'utf8',
                               'prefix' => '',
                               'schema' => 'public',
-                              'sslmode' => 'prefer',
+                              'sslmode' => 'require', // Alterado para 'require' para SSL obrigatório
                     ],
+
 
 
                     'sqlsrv' => [
