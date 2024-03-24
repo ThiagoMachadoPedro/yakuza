@@ -23,7 +23,7 @@ body, html {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    filter: blur(8px);
+    filter: blur(4px);
     z-index: -1;
 }
 
