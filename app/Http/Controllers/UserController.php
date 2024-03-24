@@ -66,7 +66,7 @@ class UserController extends Controller
 
                               // Processar o upload da imagem
                               if ($request->hasFile('imageUser')) {
-                                        $imagePath = $request->file('imageUser')->store('public/images');
+                                        $imagePath = $request->file('imageUser')->store('/images');
                               } else {
                                         $imagePath = null;
                               }

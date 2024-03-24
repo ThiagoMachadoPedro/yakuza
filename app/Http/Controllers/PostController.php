@@ -70,7 +70,7 @@ class PostController extends Controller
 
                               // Processar o upload da imagem, se existir
                               if ($request->hasFile('imagem')) {
-                                        $imagePath = $request->file('imagem')->store('public/post');
+                                        $imagePath = $request->file('imagem')->store('/post');
                                         $post->imagem = $imagePath;
                               }
 
@@ -135,7 +135,7 @@ class PostController extends Controller
                               ]);
 
                               if ($request->hasFile('imagem')) {
-                                        $imagePath = $request->file('imagem')->store('public/post');
+                                        $imagePath = $request->file('imagem')->store('/post');
                                         $post->imagem = $imagePath;
                               }
 
