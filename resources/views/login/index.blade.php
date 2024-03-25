@@ -22,10 +22,10 @@ body, html {
     background-image: url('/storage/sistem/fotoClã.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     filter: blur(4px);
     z-index: -1;
 }
+
 
 
 
