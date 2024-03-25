@@ -40,9 +40,7 @@
         <div class="card">
             <a href="{{ route('post-show', ['id' => $post->id]) }}">
 
-
-                <img src="{{ asset("storage/$post->imagem" ) }}" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" alt="Imagem do post">
-            </a>
+                    <img src="{{ asset('storage/' . $post->imagem) }}" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" alt="Imagem do post">
 
             <div class="card-body">
 
