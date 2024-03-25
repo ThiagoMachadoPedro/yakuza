@@ -8,6 +8,8 @@
 <div class="container">
     <h1>Publicações</h1>
 
+
+    {{dd(Storage_path())}}
     @include('components/mensagens')
 
     <div class="row">
@@ -35,6 +37,7 @@
 
 
 
+
   @foreach($posts as $post)
     <div class="col-md-3 col-lg-3 mb-3 pt-4">
         <div class="card">
@@ -43,7 +46,7 @@
                     <img src="{{ asset('storage/' . $post->imagem) }}" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" alt="Imagem do post">
 
 
-            
+
             </a>
 
             <div class="card-body">
