@@ -106,6 +106,7 @@
 
                     <a href="{{route('dashboard')}}">Dashboard</a>
 
+                    <a href="{{route('post-index')}}">Publicações</a>
 
                     <a href="{{route('user-index')}}">Usuários</a>
 
