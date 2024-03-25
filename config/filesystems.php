@@ -28,13 +28,24 @@ return [
     |
     */
 
-    'disks' => [
+   'disks' => [
+    // outros discos
 
-        'local' => [
-            'driver' => 'local',
-            'root' => storage_path('app'),
-            'throw' => false,
-        ],
+    'post' => [
+        'driver' => 'local',
+        'root' => public_path('post'),
+        'url' => env('APP_URL').'/post',
+        'visibility' => 'public',
+    ],
+
+    'images' => [
+        'driver' => 'local',
+        'root' => public_path('images'),
+        'url' => env('APP_URL').'/images',
+        'visibility' => 'public',
+    ],
+
+
 
         'public' => [
             'driver' => 'local',
