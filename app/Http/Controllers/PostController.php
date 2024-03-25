@@ -70,7 +70,7 @@ class PostController extends Controller
 
                               // Processar o upload da imagem, se existir
                               if ($request->hasFile('imagem')) {
-                                        $imagePath = $request->file('imagem')->store('/post');
+                                        $imagePath = $request->file('imagem')->store('post', 'public');
                                         $post->imagem = $imagePath;
                               }
 
@@ -84,7 +84,6 @@ class PostController extends Controller
                               return back()->withInput()->with('error', 'Erro ao criar post.');
                     }
           }
-
 
 
           /**
@@ -127,28 +126,25 @@ class PostController extends Controller
                               }
 
                               $validatedData = $request->validate([
-
                                         'jogadores' => 'required|string|max:255',
                                         'descricao' => 'required|string|max:255',
                                         'imagem' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-
                               ]);
 
                               if ($request->hasFile('imagem')) {
-                                        $imagePath = $request->file('imagem')->store('/post');
+                                        $imagePath = $request->file('imagem')->store('post', 'public');
                                         $post->imagem = $imagePath;
                               }
 
                               $post->jogadores = $validatedData['jogadores'];
                               $post->descricao = $validatedData['descricao'];
                               $post->save();
-                              return redirect()->route('post-index')->with('success','Atualizado com sucesso o post');
+
+                              return redirect()->route('post-index')->with('success', 'Atualizado com sucesso o post');
                     } catch (Exception $e) {
                               Log::error('Erro ao atualizar post: ' . $e->getMessage());
                               return back()->withInput()->with('error', 'Erro ao atualizar post.');
-
                     }
-
           }
 
           /**
