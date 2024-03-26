@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Rota para exibir o formulário de login
-Route::get('/', [LoginController::class, 'index'])->name('login-index');
+Route::get('/login', [LoginController::class, 'index'])->name('login-index');
 
 // Rota para processar o formulário de login
 Route::post('/login', [LoginController::class, 'store'])->name('login-store');
@@ -41,7 +41,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
           // post
-          Route::get('/post-index', [PostController::class, 'index'])->name('post-index');
+          Route::get('/', [PostController::class, 'index'])->name('post-index');
           Route::get('/post-created', [PostController::class, 'create'])->name('post-created');
           Route::post('/post-store', [PostController::class, 'store'])->name('post-store');
           Route::get('/post-edit/{id}', [PostController::class, 'edit'])->name('post-edit');
