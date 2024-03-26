@@ -67,7 +67,7 @@ class UserController extends Controller
                                  // Criar o usuário
                               $user = new User();
                               if ($request->hasFile('imageUser')) {
-                                        $imagePath = $request->file('imageUser')->store('/images');
+                                        $imagePath = $request->file('imageUser')->store('images' , 'public');
                                           $user->imageUser = $imagePath;
                               } else {
                                         $imagePath = null;
@@ -140,7 +140,7 @@ class UserController extends Controller
 
                               // Processar o upload da imagem
                               if ($request->hasFile('imageUser')) {
-                                        $imagePath = $request->file('imageUser')->store('public/images');
+                                        $imagePath = $request->file('imageUser')->store('images' , 'public');
                                         $user->imageUser = $imagePath;
                               }
 
