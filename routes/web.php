@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Rota para exibir o formulário de login
-Route::get('/login', [LoginController::class, 'index'])->name('login-index');
+Route::get('/', [LoginController::class, 'index'])->name('login-index');
 
 // Rota para processar o formulário de login
 Route::post('/login', [LoginController::class, 'store'])->name('login-store');
