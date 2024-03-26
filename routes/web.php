@@ -41,7 +41,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
           // post
-          Route::get('/', [PostController::class, 'index'])->name('post-index');
+          Route::get('/post-index', [PostController::class, 'index'])->name('post-index');
           Route::get('/post-created', [PostController::class, 'create'])->name('post-created');
           Route::post('/post-store', [PostController::class, 'store'])->name('post-store');
           Route::get('/post-edit/{id}', [PostController::class, 'edit'])->name('post-edit');
