@@ -64,20 +64,21 @@ class UserController extends Controller
                                         'imageUser' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
                               ]);
 
-                              // Processar o upload da imagem
+                                 // Criar o usuário
+                              $user = new User();
                               if ($request->hasFile('imageUser')) {
                                         $imagePath = $request->file('imageUser')->store('/images');
+                                          $user->imageUser = $imagePath;
                               } else {
                                         $imagePath = null;
                               }
 
-                              // Criar o usuário
-                              $user = new User();
+                           
                               $user->name = $validatedData['name'];
                               $user->nick = $validatedData['nick'];
                               $user->email = $validatedData['email'];
                               $user->password = bcrypt($validatedData['password']);
-                              $user->imageUser = $imagePath;
+                            
 
                               $user->save();
 
