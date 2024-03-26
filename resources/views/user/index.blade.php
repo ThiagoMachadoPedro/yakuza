@@ -35,7 +35,7 @@
 
 
             <a href="{{ route('user-show', ['id' => $user->id]) }}">
-                <img src="{{ url("storage/$user->imageUser" ) }}" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" alt="Imagem do usuário">
+                <img src="{{ asset('storage/' . $user->imageUser ) }}" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" alt="Imagem do usuário">
             </a>
             <div class="card-body">
                 <h5 class="card-title">Nome: {{ $user->name }}</h5>
