@@ -86,7 +86,7 @@
 
 src="{{ asset('storage/' . $user->imageUser ) }}"
                     @auth
-                     <img src="{{ Auth::user()->imageUser ? asset("storage/" . Auth::user()->imageUser) : 'https://media.istockphoto.com/vectors/person-gray-photo-placeholder-man-vector-id1152265845?k=20&m=1152265845&s=170667a&w=0&h=RZF10k2BsiHIjCrVDuESMN9M7kb81k7cyk74F52jvdg=' }}" alt="Profile Image" class="profile-img" id="dropdown-icon">
+                     <img src="{{ Auth::user()->imageUser ? url("storage/" . Auth::user()->imageUser) : 'https://media.istockphoto.com/vectors/person-gray-photo-placeholder-man-vector-id1152265845?k=20&m=1152265845&s=170667a&w=0&h=RZF10k2BsiHIjCrVDuESMN9M7kb81k7cyk74F52jvdg=' }}" alt="Profile Image" class="profile-img" id="dropdown-icon">
 
                       @endauth
 
