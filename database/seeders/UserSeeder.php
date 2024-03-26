@@ -16,12 +16,12 @@ class UserSeeder extends Seeder
 
 
                     User::create([
-                              'name' => 'Thiago',
+                              'name' => 'Thiago Machado',
                               'imageUser' => 'https://th.bing.com/th/id/R.a5a06254d71e4d18cb6179ed0a8af870?rik=KXOBGhSoNXDVuQ&pid=ImgRaw&r=0',
                               'nick' => 'Big Boss',
                               'access_level' => 1,
-                              'email' => 'bb@gmail.com',
-                              'password' => bcrypt('123456789'),
+                              'email' => 'tmachado807@gmail.com',
+                              'password' => bcrypt('25059090'),
                     ]);
 
 
