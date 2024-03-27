@@ -28,10 +28,19 @@ class PostController extends Controller
                               $query->where('jogadores', 'like', '%' . $request->input('post') . '%');
                     }
 
-                    if ($request->has('data')) {
-                              $date = Carbon::createFromFormat('Y-m-d', $request->input('data'));
-                              $query->whereDate('created_at', $date);
-                    }
+                  if ($request->has('data')) {
+    $dateValue = $request->input('data');
+    if (!empty($dateValue)) {
+        try {
+            $date = Carbon::createFromFormat('Y-m-d', $dateValue);
+            $query->whereDate('created_at', $date);
+        } catch (Exception $e) {
+            // Tratar caso o valor de data não seja válido
+            // Por exemplo, redirecionar de volta com uma mensagem de erro
+            return redirect()->back()->with('error', 'Data inválida');
+        }
+    }
+}
 
                     $posts = $query->paginate(8);
 
