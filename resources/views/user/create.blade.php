@@ -99,8 +99,8 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary ">Enviar</button>
-        <a href="{{route('login-index')}}" class="btn btn-warning ">login</a>
+        <button type="submit" class="btn btn-primary ">Cadastrar e Logar</button>
+        <a href="{{route('login-index')}}" class="btn btn-warning ">Voltar ao Login</a>
         {{-- implementar para voltar ao login
         <a href="{{route('index')}}"></a> --}}
     </form>
