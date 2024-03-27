@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InformacaoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -24,6 +25,7 @@ Route::get('/user-created', [UserController::class, 'create'])->name('user-creat
 Route::post('/user-store', [UserController::class, 'store'])->name('user-store');
 
 
+
 // Rotas que exigem autenticação
 Route::middleware(['auth', 'verified'])->group(function () {
           // Outras rotas protegidas...
@@ -35,11 +37,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
           Route::delete('/user-delete/{id}', [UserController::class, 'destroy'])->name('user-delete');
           Route::get('/user-view/{id}', [UserController::class, 'show'])->name('user-show');
 
-
-          // dashboard
-          Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-
-
           // post
           Route::get('/post-index', [PostController::class, 'index'])->name('post-index');
           Route::get('/post-created', [PostController::class, 'create'])->name('post-created');
@@ -48,4 +45,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
           Route::put('/post-update/{id}', [PostController::class, 'update'])->name('post-update');
           Route::delete('/post-delete/{id}', [PostController::class, 'destroy'])->name('post-delete');
           Route::get('/post-view/{id}', [PostController::class, 'show'])->name('post-show');
+
+
+
+          // dashboard
+          Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+
+          // informativo
+          Route::get('/informativo', [InformacaoController::class, 'index'])->name('informacao');
+
 });

@@ -8,8 +8,7 @@
 <div class="container">
     <h1>Publicações</h1>
 
-{{-- 
-    {{dd(Storage_path())}} --}}
+
     @include('components/mensagens')
 
     <div class="row">

@@ -110,7 +110,7 @@
 
                     <a href="{{route('user-index')}}">Usuários</a>
 
-
+                    <a href="{{route('informacao')}}">Informativo</a>
 
 
                     <form action="{{ route('logout') }}" method="POST">
