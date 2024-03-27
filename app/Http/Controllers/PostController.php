@@ -159,23 +159,25 @@ class PostController extends Controller
           /**
            * Remove the specified resource from storage.
            */
-          public function destroy(string $id)
+   public function destroy(string $id)
           {
                     try {
-
                               $post = PostModel::find($id);
                               if (!$post) {
                                         return redirect()->route('post-index')->with('error', 'Post não encontrado');
                               }
+
+                              // Verificar se há um arquivo associado ao post e excluí-lo
+                              if ($post->imagem) {
+                                        Storage::delete($post->imagem);
+                              }
+
                               $post->delete();
 
                               return redirect()->route('post-index')->with('success', 'Post excluído com sucesso!');
-
                     } catch (Exception $e) {
                               Log::error('Erro ao excluir post: ' . $e->getMessage());
                               return back()->withInput()->with('error', 'Erro ao excluir post.');
-
-
                     }
           }
 }
