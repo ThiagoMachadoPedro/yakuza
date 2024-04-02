@@ -45,6 +45,15 @@ return [
         'visibility' => 'public',
     ],
 
+  
+
+    'destaque' => [
+        'driver' => 'local',
+        'root' => public_path('destaque'),
+        'url' => env('APP_URL').'/destaque',
+        'visibility' => 'public',
+    ],
+
 
 
         'public' => [
