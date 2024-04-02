@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DestaqueController;
 use App\Http\Controllers\InformacaoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
@@ -45,6 +46,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
           Route::put('/post-update/{id}', [PostController::class, 'update'])->name('post-update');
           Route::delete('/post-delete/{id}', [PostController::class, 'destroy'])->name('post-delete');
           Route::get('/post-view/{id}', [PostController::class, 'show'])->name('post-show');
+
+
+
+          // destaques
+          Route::get('/destaque-index', [DestaqueController::class, 'index'])->name('destaque-index');
+          Route::get('/destaque-created', [DestaqueController::class, 'create'])->name('destaque-created');
+          Route::post('/destaque-store', [DestaqueController::class, 'store'])->name('destaque-store');
+          Route::get('/destaque-edit/{id}', [DestaqueController::class, 'edit'])->name('destaque-edit');
+          Route::put('/destaque-update/{id}', [DestaqueController::class, 'update'])->name('destaque-update');
+          Route::delete('/destaque-delete/{id}', [DestaqueController::class, 'destroy'])->name('destaque-delete');
+          Route::get('/destaque-view/{id}', [DestaqueController::class, 'show'])->name('destaque-show');
+
 
 
 

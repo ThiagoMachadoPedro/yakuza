@@ -10,6 +10,7 @@ use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
+use Storage;
 
 
 class UserController extends Controller
@@ -73,12 +74,12 @@ class UserController extends Controller
                                         $imagePath = null;
                               }
 
-                           
+
                               $user->name = $validatedData['name'];
                               $user->nick = $validatedData['nick'];
                               $user->email = $validatedData['email'];
                               $user->password = bcrypt($validatedData['password']);
-                            
+
 
                               $user->save();
 
@@ -174,6 +175,11 @@ class UserController extends Controller
                               if (!$user) {
                                         return redirect()->route('user-index')->with('error', 'Usuário não encontrado.');
                               }
+                              // Verificar se há um arquivo associado ao post e excluí-lo
+                              if ($user->imageUser) {
+                                        Storage::delete($user->imageUser);
+                              }
+
 
                               $user->delete();
 
